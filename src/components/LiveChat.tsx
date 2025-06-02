@@ -8,6 +8,11 @@ export default function LiveChat() {
     const [isChatOpen, setIsChatOpen] = useState(false);
     const [isMinimized, setIsMinimized] = useState(false);
 
+    const agent = {
+        name: 'Veerpal Kaur',
+        avatar: 'https://ui-avatars.com/api/?name=Veerpal+Kaur&background=0D8ABC&color=fff'
+    };
+
     const toggleChat = () => {
         setIsChatOpen(true);
         setIsMinimized(false);
@@ -35,12 +40,12 @@ export default function LiveChat() {
                 >
                     <div className="flex items-center space-x-2">
                         <img 
-                            src="https://ui-avatars.com/api/?name=Sarah+Wilson&background=0D8ABC&color=fff" 
-                            alt="Sarah Wilson" 
+                            src={agent.avatar}
+                            alt={agent.name}
                             className="w-8 h-8 rounded-full" 
                         />
                         <div>
-                            <p className="font-semibold">Sarah Wilson</p>
+                            <p className="font-semibold">{agent.name}</p>
                             <p className="text-xs opacity-75">Click to expand</p>
                         </div>
                     </div>

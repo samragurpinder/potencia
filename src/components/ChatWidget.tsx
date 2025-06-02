@@ -42,9 +42,9 @@ export default function ChatWidget({ onClose, onMinimize }: ChatWidgetProps) {
     const [typingTimeout, setTypingTimeout] = useState<NodeJS.Timeout | null>(null);
 
     const agent: Agent = {
-        name: 'Sarah Wilson',
+        name: 'Veerpal Kaur',
         role: 'Academic Advisor',
-        avatar: 'https://ui-avatars.com/api/?name=Sarah+Wilson&background=0D8ABC&color=fff',
+        avatar: 'https://ui-avatars.com/api/?name=Veerpal+Kaur&background=0D8ABC&color=fff',
         status: 'online',
     };
 
@@ -202,7 +202,7 @@ export default function ChatWidget({ onClose, onMinimize }: ChatWidgetProps) {
                             <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.2s' }}></div>
                             <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: '0.4s' }}></div>
                         </div>
-                        <span className="text-sm">Sarah is typing...</span>
+                        <span className="text-sm">{agent.name} is typing...</span>
                     </div>
                 )}
                 <div ref={messagesEndRef} />
