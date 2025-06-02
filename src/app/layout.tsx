@@ -2,6 +2,7 @@ import './globals.css';
 import { Inter, Outfit } from 'next/font/google';
 import type { Metadata } from 'next';
 import Footer from '@/components/Footer';
+import LiveChat from '@/components/LiveChat';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -41,7 +42,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${outfit.variable} bg-black`}>
       <head>
-        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com;" />
+        <meta httpEquiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://api.talkjs.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.talkjs.com wss://api.talkjs.com;" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="icon" href="/favicon.ico" />
       </head>
@@ -50,6 +51,7 @@ export default function RootLayout({
           {children}
         </div>
         <Footer />
+        <LiveChat />
       </body>
     </html>
   );
